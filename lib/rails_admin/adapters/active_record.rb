@@ -6,13 +6,13 @@ module RailsAdmin
     module ActiveRecord
       def get(id)
         model.find_by_id(id)
-      rescue ActiveRecord::RecordNotFound
+      rescue ::ActiveRecord::RecordNotFound
         nil
       end
-      
+
       def get_bulk(ids)
         model.find(ids)
-      rescue ActiveRecord::RecordNotFound
+      rescue ::ActiveRecord::RecordNotFound
         nil
       end
 
@@ -49,7 +49,7 @@ module RailsAdmin
       def new(params = {})
         model.new(params)
       end
-      
+
       def destroy(ids)
         model.destroy(ids)
       end
